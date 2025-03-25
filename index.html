@@ -14,144 +14,206 @@
         <link rel="manifest" href="./resurse/ico/favicon/site.webmanifest">
         <meta name="msapplication-TileColor" content="#a6a6a6">
         <link rel="stylesheet" type="text/css" href="./resurse/css/general.css">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
     </head>
     <body>
         <header>
-            <h1>Home</h1>
+            <h1><i class="acasa"></i>Home</h1>
             <nav>
-                <ul>
-                    <li><a href="#sectiune1">Despre noi</a>
-                        <ul>
-                            <li><a href="#subsectiune1.1">Povestea noastră</a></li>
-                            <li><a href="#subsectiune1.2">Cui ne adresăm?</a></li>
+                <ul class="meniu">
+                    <li><a href="#sectiune1Despre">Despre noi</a>
+                        <ul class="subcategorie">
+                            <li><a href="#subsectiune1-1">Povestea noastră</a></li>
+                            <li><a href="#subsectiune1-2">Cui ne adresăm?</a></li>
                         </ul>
                     </li>
                     <li><a href="#sectiune2">Adăugate recent</a></li>
                     <li><a href="#sectiune3">Cele mai căutate produse</a></li>
                     <li><a href="#sectiune4">Link-uri pentru pasionați</a>
-                        <ul>
-                            <li><a href="#subsectiune4.1">Genius</a></li>
-                            <li><a href="#subsectiune4.2">Rate Your Music</a></li>
-                            <li><a href="#subsectiune4.3">Artiștii noștri preferați</a></li>
-                            <li><a href="#subsectiune4.4">Playlist-urile noastre</a></li>
-                            <li><a href="#subsectiune4.5">Catalogul nostru de produse - Colecția Hip-Hop, Rap și R&B</a></li>
+                        <ul class="subcategorie">
+                            <li><a href="#subsectiune4-1">Genius</a></li>
+                            <li><a href="#subsectiune4-2">Rate Your Music</a></li>
+                            <li><a href="#subsectiune4-3">Întrebări frecvente</a></li>
                         </ul>
                     </li>
-                    <li><a href="#sectiune5">Întrebări frecvente</a></li>
+                    <li><a href="#sectiune5">Catalogul de produse</a></li>
+                    <li><a href="#sectiune6">Playlist-urile noastre</a></li>
+                    <li><a href="#sectiune7">Artiștii noștri preferați</a></li>
+                    <li><a href="#tabel">Idei de festivaluri</a></li>
                 </ul>
             </nav>
         </header>
         <main>
-            <figure>
-                <picture>
-                    <source srcset="./resurse/imagini/magazin/exterior_magazin_low.jpg" media="(max-width: 480px)">
-                    <source srcset="./resurse/imagini/magazin/exterior_magazin_medium.jpg" media="(max-width: 1024px)">
-                    <img src="./resurse/imagini/magazin/exterior_magazin_high.jpg" id="prezentareMagazin" alt="Exterior magazin">
-                </picture>
-                <figcaption>Magazinul nostru</figcaption>
-            </figure>
-            <section id="sectiune1">
-                <h2>Despre noi</h2>
-                <p>
-                    <b>Turntable Treasures</b> este un magazin românesc de discuri vinil. De peste 5 ani aducem în casele iubitorilor de muzică cele mai îndrăgite albume în format analogic, combinând plăcerea de a colecționa viniluri cu cea de a asculta proiectele artiștilor preferați. Ne mândrim cu o colecție diversificată care acoperă genuri de la jazz și soul, până la rock și heavy metal.
-                </p>
-                <section id="subsectiune1.1">
-                    <h3>Povestea noastră</h3>
+            <div id="grid-pagina">
+                <section id="sectiune1">
+                    <figure id="magazin">
+                        <picture>
+                            <source srcset="./resurse/imagini/magazin/exterior_magazin_low.jpg" media="(max-width: 800px)">
+                            <source srcset="./resurse/imagini/magazin/exterior_magazin_medium.jpg" media="(max-width: 1200px)">
+                            <img src="./resurse/imagini/magazin/exterior_magazin_high.jpg" id="prezentareMagazin" alt="Exterior magazin">
+                        </picture>
+                        <figcaption style="text-align: center">Magazinul nostru</figcaption>
+                    </figure>
+                    <h2 id="sectiune1Despre">Despre noi</h2>
                     <p>
-                        Magazinul nostru a luat naștere din dorința de a le oferi pasionaților din România posibilitatea de a găsi proiectele dorite pe plan local, fără a mai fi nevoie să aștepte perioade îndelungate până la livrarea comenzilor. Din prima zi ne-am propus să oferim nu doar discuri vinil, ci și cunoștințe, sfaturi și un spațiu în care pasionații să se întâlnească și să discute despre subiectele favorite. Prin evenimente de lansare și colaborări cu artiștii autohtoni, am reușit să creăm mai mult decât un magazin de discuri vinil - am construit o comunitate unită prin pasiunea pentru muzică. <i><q>I feel like music is best consumed in atmosphere.</q></i> - după cum a afirmat artistul R&B Frank Ocean în cadrul unui interviu acordat publicației <em>Complex</em>.
+                        <b>Turntable Treasures</b> este un magazin românesc de discuri vinil. De peste 5 ani aducem în casele iubitorilor de muzică cele mai îndrăgite albume în format analogic, combinând plăcerea de a colecționa viniluri cu cea de a asculta proiectele artiștilor preferați. Ne mândrim cu o colecție diversificată care acoperă genuri de la jazz și soul, până la rock și heavy metal.
                     </p>
+                    <section id="subsectiune1-1">
+                        <h3>Povestea noastră</h3>
+                        <p>
+                            Magazinul nostru a luat naștere din dorința de a le oferi pasionaților din România posibilitatea de a găsi proiectele dorite pe plan local, fără a mai fi nevoie să aștepte perioade îndelungate până la livrarea comenzilor. Din prima zi ne-am propus să oferim nu doar discuri vinil, ci și cunoștințe, sfaturi și un spațiu în care pasionații să se întâlnească și să discute despre subiectele favorite. Prin evenimente de lansare și colaborări cu artiștii autohtoni, am reușit să creăm mai mult decât un magazin de discuri vinil - am construit o comunitate unită prin pasiunea pentru muzică. <i><q>I feel like music is best consumed in atmosphere.</q></i> - după cum a afirmat artistul R&B Frank Ocean în cadrul unui interviu acordat publicației <em>Complex</em>.
+                        </p>
+                    </section>
+                    <section id="subsectiune1-2">
+                        <h3>Cui ne adresăm?</h3>
+                        <p>
+                            Ne adresăm tuturor celor care caută mai mult decât muzica digitală, cea cu care suntem cu toții familiarizați. Fie că ești DJ profesionist, fan înrăit al acestui concept sau un simplu curios, la Turntable Treasures vei găsi un loc în care pasiunea pentru muzică ne leagă. Credem că muzica merită să fie apreciată în adevăratul sens al cuvântului, iar în această eră a streamingului este tot mai rar întâlnită alegerea unui disc cu albumul preferat. Suntem aici pentru cunoscători, fani ai formatului analogic, dar și pentru cei care pășesc pentru prima oară în acest domeniu.
+                        </p>
+                    </section>
                 </section>
-                <section id="subsectiune1.2">
-                    <h3>Cui ne adresăm?</h3>
+                <section id="sectiune2">
+                    <h2>Adăugate recent</h2>
+                    <p>Aici vei găsi cele mai noi produse.</p>
+                    <ul class="albumePagPrincipala">
+                        <li>
+                            <figure class="album">
+                                <img src="./resurse/imagini/albume600px/channel.jpg">
+                                <figcaption><b>channel ORANGE</b> - Frank Ocean</figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure class="album">
+                                <img src="./resurse/imagini/albume600px/flowerboy.jpg">
+                                <figcaption><b>Flowerboy</b> - Tyler, The Creator</figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                </section>
+                <section id="sectiune3">
+                    <h2>Cele mai căutate produse</h2>
+                    <p>Aici vei găsi bestsellerele noastre.</p>
+                    <ul class="albumePagPrincipala">
+                        <li>
+                            <figure class="album">
+                                <img src="./resurse/imagini/albume600px/2014fhd.jpg">
+                                <figcaption><b>2014 Forest Hills Drive</b> - J. Cole</figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure class="album">
+                                <img src="./resurse/imagini/albume600px/igor.jpg">
+                                <figcaption><b>IGOR</b> - Tyler, The Creator</figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                </section>
+                <section id="sectiune4">
+                    <h2>Link-uri pentru pasionați</h2>
+                    <section id="subsectiune4-1">
+                        <h3>Genius</h3>
+                        <p>
+                            <a href="https://genius.com" target="_blank">Genius</a> reprezintă o platformă online dedicată muzicii. Aceasta conține de la interviuri cu artiști până la discuții ample pe baza versurilor unor piese. În cadrul site-ului, pasionații de muzică, fie ea contemporană sau clasică, se adună pentru a se documenta cu privire la proiectele lor favorite.
+                        </p>
+                    </section>
+                    <section id="subsectiune4-2">
+                        <h3>Rate Your Music</h3>
+                        <p>
+                            <a href="https://rateyourmusic.com" target="_blank">Rate Your Music</a> este un site prin intermediul căruia utilizatorii pot oferi proiectelor ascultate un rating de la 1 la 5 stele. Astfel, cei care doresc să descopere un nou proiect care să le fie pe plac pot verifica rating-ul acordat de alte persoane. Platforma oferă și posibilitatea de a scrie o recenzie detaliată, fapt ce transformă Rate Your Music într-o resursă valoroasă atunci când vine vorba de descoperirea de noi albume.
+                        </p>
+                    </section>
+                    <section id="subsectiune4-3">
+                        <h3>Întrebări frecvente</h3>
+                        <details><summary>Care sunt dimensiunile standard ale discurilor vinil?</summary>
+                            <p>Discurile vinil pot fi:</p>
+                                <ul>
+                                    <li><abbr title="Long Play">LP</abbr> - 30cm, având un album întreg</li>
+                                    <li>Single - 17.5cm, având una-două melodii</li>
+                                    <li><abbr title="Extended Play">EP</abbr> - 25cm, având mai multe melodii decât un Single, dar mai puține decât un LP</li>
+                                    <li>Maxi Single - 30cm, folosit pentru remixuri și piese dance</li>
+                                </ul>
+                        </details>
+                        <details><summary>Cum îmi pot păstra vinilurile în condiții optime?</summary>
+                            <p>
+                                Discurile de vinil trebuie depozitate în permanență vertical, niciodată culcate unele peste celelalte, pentru a preveni deformarea. Se recomandă utilizarea unor huse interioare anti-statice. Păstrați colecția într-un mediu uscat, ferit de lumina directă a soarelui, la temperaturi cuprinse între 15-21°C. Curățați regulat discurile, folosind o perie anti-statică înaintea fiecărei redări.
+                            </p>
+                        </details>
+                        <details><summary>Cum funcționează procesul de livrare?</summary>
+                            <p>
+                                Comenzile online sunt procesate în termen de 24 de ore de la plasare. Discurile sunt ambalate cu grijă, fiind puse în cutii rigide de carton. Livrarea se face printr-un serviciu de curierat specializat, pachetele având marcajul „<i>fragil</i>”. Timpul de livrare poate varia de la 5 până la 7 zile lucrătoare.
+                            </p>
+                        </details>
+                    </section>
+                </section>
+                <section id="sectiune5">
+                    <h3>Catalogul nostru de produse - Colecția Hip-Hop, Rap și R&B</h3>
                     <p>
-                        Ne adresăm tuturor celor care caută mai mult decât muzica digitală, cea cu care suntem cu toții familiarizați. Fie că ești DJ profesionist, fan înrăit al acestui concept sau un simplu curios, la Turntable Treasures vei găsi un loc în care pasiunea pentru muzică ne leagă. Credem că muzica merită să fie apreciată în adevăratul sens al cuvântului, iar în această eră a streamingului este tot mai rar întâlnită alegerea unui disc cu albumul preferat. Suntem aici pentru cunoscători, fani ai formatului analogic, dar și pentru cei care pășesc pentru prima oară în acest domeniu.
+                        Vrei să descarci catalogul nostru? Apasă <a href="./resurse/pdf/catalog.pdf" download="catalog_turntable.pdf"><b>aici</b></a>
                     </p>
+                    <embed src="./resurse/pdf/catalog.pdf" type="application/pdf">
                 </section>
-            </section>
-            <section id="sectiune2">
-                <h2>Adăugate recent</h2>
-                <p>Aici vei găsi cele mai noi produse.</p>
-                <ul class="albumePagPrincipala">
-                    <li>
-                        <figure>
-                            <img src="./resurse/imagini/albume600px/ginger.jpg">
-                            <figcaption><b>GINGER</b> - BROCKHAMPTON</figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <img src="./resurse/imagini/albume600px/freudian.jpg">
-                            <figcaption><b>Freudian</b> - Daniel Caesar</figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <img src="./resurse/imagini/albume600px/channel.jpg">
-                            <figcaption><b>channel ORANGE</b> - Frank Ocean</figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <img src="./resurse/imagini/albume600px/flowerboy.jpg">
-                            <figcaption><b>Flowerboy</b> - Tyler, The Creator</figcaption>
-                        </figure>
-                    </li>
-                </ul>
-            </section>
-            <section id="sectiune3">
-                <h2>Cele mai căutate produse</h2>
-                <p>Aici vei găsi bestsellerele noastre.</p>
-                <ul class="albumePagPrincipala">
-                    <li>
-                        <figure>
-                            <img src="./resurse/imagini/albume600px/graduation.jpg">
-                            <figcaption><b>Graduation</b> - Kanye West</figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <img src="./resurse/imagini/albume600px/am.jpg">
-                            <figcaption><b>AM</b> - Arctic Monkeys</figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <img src="./resurse/imagini/albume600px/2014fhd.jpg">
-                            <figcaption><b>2014 Forest Hills Drive</b> - J. Cole</figcaption>
-                        </figure>
-                    </li>
-                    <li>
-                        <figure>
-                            <img src="./resurse/imagini/albume600px/igor.jpg">
-                            <figcaption><b>IGOR</b> - Tyler, The Creator</figcaption>
-                        </figure>
-                    </li>
-                </ul>
-            </section>
-            <section id="sectiune4">
-                <h2>Link-uri pentru pasionați</h2>
-                <section id="subsectiune4.1">
-                    <h3>Genius</h3>
-                    <p>
-                        <a href="https://genius.com" target="_blank">Genius</a> reprezintă o platformă online dedicată muzicii. Aceasta conține de la interviuri cu artiști până la discuții ample pe baza versurilor unor piese. În cadrul site-ului, pasionații de muzică, fie ea contemporană sau clasică, se adună pentru a se documenta cu privire la proiectele lor favorite.
-                    </p>
-                </section>
-                <section id="subsectiune4.2">
-                    <h3>Rate Your Music</h3>
-                    <p>
-                        <a href="https://rateyourmusic.com" target="_blank">Rate Your Music</a> este un site prin intermediul căruia utilizatorii pot oferi proiectelor ascultate un rating de la 1 la 5 stele. Astfel, cei care doresc să descopere un nou proiect care să le fie pe plac pot verifica rating-ul acordat de alte persoane. Platforma oferă și posibilitatea de a scrie o recenzie detaliată, fapt ce transformă Rate Your Music într-o resursă valoroasă atunci când vine vorba de descoperirea de noi albume.
-                    </p>
-                </section>
-                <section id="subsectiune4.3">
-                    <h3>Artiștii noștri preferați</h3>
-                    <img id="imagineArtisti" src="./resurse/imagini/artisti.jpg" usemap="#artisti" alt="Imagine interactivă">
-                    <map name="artisti">
-                        <area shape="rect" coords="850,85,1400,800" alt="Tyler, The Creator" href="https://en.wikipedia.org/wiki/Tyler,_the_Creator" target="_blank">
-                        <area shape="rect" coords="85,85,450,800" alt="A$AP Rocky" href="https://en.wikipedia.org/wiki/ASAP_Rocky" target="_blank">
-                    </map>
-                </section>
-                <section id="subsectiune4.4">
-                    <h3>Playlist-urile noastre</h3>
+                <div id="tabel">
+                    <table>
+                        <caption>La ce festivaluri mergem?</caption>
+                        <thead>
+                            <tr>
+                                <th>Denumire</th>
+                                <th>Locație</th>
+                                <th colspan="2">Perioadă</th>
+                                <th>Preț bilet</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rolling Loud Europe</td>
+                                <td>München, Germania</td>
+                                <td>05.07.2025</td>
+                                <td>07.07.2025</td>
+                                <td>945RON</td>
+                            </tr>
+                            <tr>
+                                <td>Wireless Festival</td>
+                                <td>Londra, Marea Britanie</td>
+                                <td>11.07.2025</td>
+                                <td>13.07.2025</td>
+                                <td>565RON</td>
+                            </tr>
+                            <tr>
+                                <td>Montreux Jazz Festival</td>
+                                <td>Montreux, Elveția</td>
+                                <td>04.07.2025</td>
+                                <td>19.07.2025</td>
+                                <td>350RON</td>
+                            </tr>
+                            <tr>
+                                <td>Sziget Festival</td>
+                                <td>Budapesta, Ungaria</td>
+                                <td>06.08.2025</td>
+                                <td>11.08.2025</td>
+                                <td>425RON</td>
+                            </tr>
+                            <tr>
+                                <td>Jazz à Vienne</td>
+                                <td>Vienne, Franța</td>
+                                <td>28.06.2025</td>
+                                <td>13.07.2025</td>
+                                <td>225RON</td>
+                            </tr>
+                            <tr>
+                                <td>Beach, Please!</td>
+                                <td>Costinești, România</td>
+                                <td>09.07.2025</td>
+                                <td>13.07.2025</td>
+                                <td>500RON</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <td colspan="5">Cel mai ieftin bilet: Jazz à Vienne</td>
+                        </tfoot>
+                    </table>
+                </div>
+                <section id="sectiune6">
+                    <h2>Playlist-urile noastre</h2>
                     <p>
                         Aici găsiți câteva liste de redare, în funcție de genul muzical, realizate de către colegii noștri.
                     </p>
@@ -165,40 +227,19 @@
                     </div>
                     <br>
                 </section>
-                <section id="subsectiune4.5">
-                    <h3>Catalogul nostru de produse - Colecția Hip-Hop, Rap și R&B</h3>
-                    <p>
-                        Vrei să descarci catalogul nostru? Apasă <a href="./resurse/pdf/catalog.pdf" download="catalog_turntable.pdf"><b>aici</b></a>
-                    </p>
-                    <embed src="./resurse/pdf/catalog.pdf" type="application/pdf">
+                <section id="sectiune7">
+                    <h3>Artiștii noștri preferați</h3>
+                    <img id="imagineArtisti" src="./resurse/imagini/artisti.jpg" usemap="#artisti" alt="Imagine interactivă">
+                    <map name="artisti">
+                        <area shape="rect" coords="850,85,1400,800" alt="Tyler, The Creator" href="https://en.wikipedia.org/wiki/Tyler,_the_Creator" target="_blank">
+                        <area shape="rect" coords="85,85,450,800" alt="A$AP Rocky" href="https://en.wikipedia.org/wiki/ASAP_Rocky" target="_blank">
+                    </map>
                 </section>
-            </section>
-            <section id="sectiune5">
-                <h2>Întrebări frecvente</h2>
-                <details><summary>Care sunt dimensiunile standard ale discurilor vinil?</summary>
-                    <p>Discurile vinil pot fi:</p>
-                        <ul>
-                            <li><abbr title="Long Play">LP</abbr> - 30cm, având un album întreg</li>
-                            <li>Single - 17.5cm, având una-două melodii</li>
-                            <li><abbr title="Extended Play">EP</abbr> - 25cm, având mai multe melodii decât un Single, dar mai puține decât un LP</li>
-                            <li>Maxi Single - 30cm, folosit pentru remixuri și piese dance</li>
-                        </ul>
-                </details>
-                <details><summary>Cum îmi pot păstra vinilurile în condiții optime?</summary>
-                    <p>
-                        Discurile de vinil trebuie depozitate în permanență vertical, niciodată culcate unele peste celelalte, pentru a preveni deformarea. Se recomandă utilizarea unor huse interioare anti-statice. Păstrați colecția într-un mediu uscat, ferit de lumina directă a soarelui, la temperaturi cuprinse între 15-21°C. Curățați regulat discurile, folosind o perie anti-statică înaintea fiecărei redări.
-                    </p>
-                </details>
-                <details><summary>Cum funcționează procesul de livrare?</summary>
-                    <p>
-                        Comenzile online sunt procesate în termen de 24 de ore de la plasare. Discurile sunt ambalate cu grijă, fiind puse în cutii rigide de carton. Livrarea se face printr-un serviciu de curierat specializat, pachetele având marcajul „<i>fragil</i>”. Timpul de livrare poate varia de la 5 până la 7 zile lucrătoare.
-                    </p>
-                </details>
-            </section>
+            </div>
         </main>
         <footer>
-            <a href="#">Înapoi către începutul paginii</a>
-            <address>
+            <a href="#" title="mergi sus" id="link-top"><div id="triunghi"></div></a>
+            <address class="contact">
                 <p>
                     Ne puteți contacta telefonic la <a href="tel:+40712345678"><b>+40712345678</b></a>
                 </p>
@@ -208,7 +249,7 @@
                     Ne puteți găsi pe <a href="https://maps.app.goo.gl/jFLEfT9D3hKnX6PD7" target="_blank">Strada Academiei 14, București 010014, România</a>
                 </p>
                 <p>
-                    Contactați-ne prin e-mail <a href="mailto:office@turntabletreasures.com"><b>aici</b></a>
+                    <i class="fa-solid fa-address-card fa-beat"></i> Contactați-ne prin e-mail <a href="mailto:office@turntabletreasures.com"><b>aici</b></a>
                 </p>
                 <p>
                     Contactați-ne pe WhatsApp <a href="https://wa.me/7123456789" target="_blank"><b>aici</b></a>
@@ -218,6 +259,5 @@
                 </p>
             </address>
         </footer>
-
     </body>
 </html>
