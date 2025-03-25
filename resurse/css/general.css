@@ -1,28 +1,394 @@
-#prezentareMagazin{
-    display: block;
-    max-width: 100%;
+:root{
+    --background-header: #FFF6E0;
+    --background-main: #E1EAFF;
+    --background-footer: #364C80;
+    --text-header: #8093BF;
+    --text-main: #AA9564;
+    --text-footer: #554216;
+    --culoare-border: #7F5739;
 }
 
-.albumePagPrincipala img{
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-#imagineArtisti{
-    display: block;
-    max-width: 100%;
-    max-height: 25%;
+html{
+    font-size: 18px;
+    transition: font-size 0.3s ease-in;
 }
 
-embed{
+body{
+    --spatiere-pagina: 30px;
+    --spatiere-text: 15px;
+}
+
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Bebas Neue', sans-serif;
+    margin-top: var(--spatiere-text);
+}
+
+a, p, li, figcaption, summary{
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+header h1{
+    margin: 0;
+}
+
+h2{
+    font-size: 1.6rem;
+}
+
+h3{
+    font-size: 1.3rem;
+}
+
+header{
+    background-color: var(--background-header);
+    padding: var(--spatiere-pagina);
+}
+  
+main{
+    background-color: var(--background-main);
+    padding: var(--spatiere-pagina);
+}
+  
+footer{
+    background-color: var(--background-footer);
+    padding: var(--spatiere-pagina)
+}
+
+#grid-pagina{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "zona1 zona1 zona1 zona1"
+                         "zona2 zona2 zona3 zona3"
+                         "zona2 zona2 zona4 zona4"
+                         "zona5 zona6 zona6 zona7"
+                         "zona8 zona8 zona8 zona8";
+    gap: 0.75rem;
+}
+
+#grid-pagina > * {
+    border: 1px solid var(--culoare-border);
+    border-radius: 0.75rem;
+    box-shadow: 0.3rem 0.3rem var(--culoare-border);
+    padding: var(--spatiere-text);
+}
+
+/*descriere*/
+#sectiune1{
+    grid-area: zona1;
+    margin-top: .5rem;
+}
+
+#sectiune1 img{
+    width: 90%;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
-    height: 600px;
 }
 
-map area{
-    cursor: pointer;
+/*tabel*/
+#tabel{
+    grid-area: zona2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*pdf*/
+#sectiune5{
+    grid-area: zona3;
+}
+
+#sectiune5 > embed{
+    display: flex;
+    max-width: 95%;
+    width: 95%;
+    height: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0.5rem;
+}
+
+/*artisti*/
+#sectiune7{
+    grid-area: zona4;
+}
+
+/*recente*/
+#sectiune2{
+    grid-area: zona5;
+}
+
+/*playlist*/
+#sectiune6{
+    grid-area: zona6;
+}
+
+/*bestsellers*/
+#sectiune3{
+    grid-area: zona7;
+}
+
+/*linkuri*/
+#sectiune4{
+    grid-area: zona8;
+    margin-bottom: 0.5rem;
+}
+
+#imagineArtisti{
+    max-width: 100%;
+}
+
+.albumePagPrincipala{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 6rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#sectiune3 > .albumePagPrincipala{
+    gap: 0.5rem 6rem;
+}
+
+#iframe_playlist{
+    width: 100%;
+}
+
+#iframe_playlist > iframe{
+    width: 100%;
+    height: 375px;
+    border: 3px solid var(--culoare-border);
+    border-radius: 20px;
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
+#iframe_tabs{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#iframe_tabs > a{
+    display: block;
+    padding: 5px;
+    border: 1px solid var(--culoare-border);
+    border-radius: 0 0 10px 10px;
+    background-color: var(--background-header);
+    position: relative;
+    margin-right: 2.5px;
+    margin-top: -5px;
+    text-decoration: none;
+}
+
+#iframe_tabs > a::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 104%;
+    transform: translateX(-50%);
+    height: 2.5px;
+    top: -3px;
+    border: 1px solid var(--culoare-border);
+    background-color: var(--culoare-border);
+    border-radius: 0 0 10px 10px;
+}
+
+#iframe_tabs > a:hover{
+    background-color: white;
+    color: var(--culoare-border);
+    transition: background-color 750ms ease-in;
+}
+
+
+table {
+    border-collapse: collapse;
+    border: 5px double #333;
+    width: 100%;
+    font-family: 'Roboto Slab', serif;
+}
+
+table caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    caption-side: bottom;
+}
+
+table th, table td {
+    border: 1px solid var(--culoare-border);
+    padding: 10px;
+    text-align: center;
+}
+
+table th:nth-child(odd), 
+table td:nth-child(odd) {
+    color: var(--text-footer);
+}
+
+table th:nth-child(even), 
+table td:nth-child(even) {
+    color: var(--text-main);
+}
+
+table th:nth-child(4) {
+    color: var(--text-footer);
+}
+
+
+table tr:hover td {
+    background-color: #f0f0f0;
+    color: #000;
+    border-width: 5px;
+    transition: color 750ms ease-in;
+}
+
+.album img{
+    display: flex;
+    max-width: 300px;
+    margin-top: 20px;
+}
+
+#link-top{
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    width: 3rem;
+    height: 3rem;
+    opacity: 0.5;
+    box-sizing: border-box;
+    line-height: 3rem;
+    border: 3px solid var(--culoare-border);
+    transform: rotate(45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--text-main);
+    transition: background-color 300ms ease-in, border 300ms ease-in;
+}
+
+#link-top:hover{
+    opacity: 1;
+    border: 3px solid var(--culoare-border);
+    background-color: var(--culoare-border);
+}
+
+#link-top:hover #triunghi{
+    border-bottom-color: var(--text-main);
+}
+
+#triunghi{
+    height: 0px;
+    width: 0;
+    display:inline-block;
+    border-bottom:1.8rem solid var(--culoare-border);
+    border-left:1rem solid transparent;
+    border-right:1rem solid transparent;
+    vertical-align: top;
+    transform: rotate(-45deg);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    transition: color 300ms ease-in;
+}
+
+@media screen and (max-width:800px){
+    html{
+        font-size: 12.5px;
+    }
+    body{
+        --spatiere-pagina: 10px;
+        --spatiere-text: 10px;
+    }
+
+    #grid-pagina > *{
+        margin-top: 0.75rem;
+        margin-bottom: 0.25rem;
+    }
+
+    #grid-pagina{
+        display: block !important;
+    }
+    
+    *{
+        animation: none;
+        transition: none;
+    }
+
+    #tabel{
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+@media screen and (max-width:1200px){
+    html{
+        font-size: 16px;
+    }
+    body{
+        --spatiere-pagina: 20px;
+        --spatiere-text: 12.5px;
+    }
+    #grid-pagina{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "zona1 zona1 zona1"
+                             "zona2 zona2 zona2"
+                             "zona3 zona4 zona4"
+                             "zona5 zona5 zona6"
+                             "zona7 zona7 zona7"
+                             "zona8 zona8 zona8";
+        gap: 1rem;
+    }
+    #tabel{
+        display: block;
+    }
 }
