@@ -1,0 +1,111 @@
+#banner, #watermark{
+    display: none;
+}
+
+@media print{
+    .album, #iframe_playlist, #imagineArtisti, iframe, embed, #link-top{
+        display: none !important;
+    }
+
+    #banner {
+        display: block;
+        position: absolute;
+        bottom: 2cm;
+        left: 15%;
+        width: 70%;
+        text-align: center;
+        border: 4px inset black;
+        padding: 2px;
+        font-family: 'Bebas Neue', sans-serif;
+    }
+      
+    #banner::after {
+        content: "Acesta este un proiect școlar!";
+        display: block;
+    }
+    
+    #watermark {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+    }
+
+    #watermark::after {
+        display: block;
+        content: "Vlășceanu\A Andrei";
+        white-space: pre;
+        opacity: 0.4;
+        padding: 0.25rem;
+        width: 4cm;
+        height: 1cm;
+        border: 3px solid var(--text-main);
+        border-radius: 5px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.75rem;
+        color: var(--text-main);
+    }
+
+    #grid-pagina{
+        font-size: 10px;
+        box-sizing: border-box;
+        page-break-before: always;
+        background-color: white;
+        display: block;
+    }
+
+    nav {
+        display: block;
+        width: 100%;
+        margin-bottom: 2cm;
+    }
+    
+    nav ul.meniu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 0;
+    }
+    
+    nav ul.meniu > li {
+        display: block;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    nav ul.subcategorie {
+        display: none !important;
+    }
+
+    header > h1 {
+        text-align: center;
+        margin-left: 1cm;
+    }
+
+    #grid-pagina > *{
+        margin-top: 0.75rem;
+        margin-bottom: 0.25rem;
+        page-break-inside: avoid;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    footer{
+        page-break-before: always;
+    }
+
+    @page :left {
+        margin-left: 3cm;
+        margin-right: 1cm;
+      }
+      
+      @page :right {
+        margin-left: 1cm;
+        margin-right: 3cm;
+      }
+}
