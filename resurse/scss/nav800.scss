@@ -1,0 +1,94 @@
+@media screen and (max-width: 800px) {
+	#hamburgerLabel {
+        display: flex;
+        flex-direction: column;
+		position: fixed;
+		justify-content: space-between;
+		height: 20px;
+		width: 30px;
+		top: 0;
+		left: 0;
+		padding: 1rem;
+		cursor: pointer;
+		background-color: var(--background-header);
+		z-index: 2;
+	}
+}
+
+#hamburgerLabel {
+	span {
+		height: 3px;
+		width: 100%;
+		background-color: black;
+		border-radius: 3px;
+		transition: 0.3s ease-in-out;
+	}
+}
+
+.iconHome {
+	.textHome {
+		display: none;
+	}
+}
+
+nav {
+	display: none;
+}
+
+header {
+	width: 100%;
+	position: fixed;
+	text-align: center;
+	h1 {
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
+}
+
+#hamburgerToggle {
+	&:checked {
+		& ~ nav {
+			display: block;
+			width: 100%;
+			height: auto;
+			position: fixed;
+			left: 0;
+			background-color: transparent;
+			ul {
+				&.meniu {
+					display: flex;
+					flex-direction: column;
+					& > li {
+						width: 100%;
+						background-color: var(--background-header);
+						animation: animatieSubmeniu 2s forwards;
+						transform-origin: left center;
+					}
+					li {
+						ul {
+							position: static;
+							display: none;
+							transition: none;
+						}
+						&:hover {
+							ul {
+								display: block;
+								height: auto;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@keyframes animatieSubmeniu {
+	0% {
+        clip-path: polygon(0 0, 0 0, 0 50%, 0 100%, 0 100%);
+	}
+    100% {
+	    clip-path: polygon(0% 0%, 100% 0%, 125% 50%, 100% 100%, 0% 100%);
+    }
+}
