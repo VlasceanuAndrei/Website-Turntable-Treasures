@@ -6,6 +6,8 @@
     --text-main: #AA9564;
     --text-footer: #554216;
     --culoare-border: #7F5739;
+    --link-vizitat: #997A5D;
+    --background-link: #86736197;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -69,6 +71,36 @@ h1, h2, h3, h4, h5, h6{
 
 a, p, li, figcaption, summary{
     font-family: 'Roboto Slab', sans-serif;
+}
+
+a:visited{
+    color: var(--link-vizitat);
+}
+
+a[href^="http"]::before{
+    content: "⮳";
+    font-size: 1.5rem;
+}
+
+a[href^="http"]:hover::before{
+    color: black;
+}
+
+main a{
+    background-image: radial-gradient(circle, var(--background-link) 0%,
+                    var(--background-link) 40%, transparent 80%, transparent 100%);
+    background-position: center;
+    background-size: 0 0;
+    background-repeat: no-repeat;
+    transition: background-size 750ms ease-in;
+}
+
+main a:hover{
+    background-size: 100% 100%;
+}
+
+a:active{
+    border: 1px solid var(--culoare-border);
 }
 
 h1{
@@ -338,6 +370,19 @@ table tr:hover td {
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     transition: color 300ms ease-in;
+}
+
+#clipPrezentare{
+    display: block;
+    max-width: 80%;
+    min-width: 250px;
+    margin: 1rem auto 1rem auto;
+}
+
+#clipPrezentare::cue {
+    background-color: transparent;
+    color: white;
+    text-shadow: 1px 1px black;
 }
 
 @media screen and (max-width:800px){
