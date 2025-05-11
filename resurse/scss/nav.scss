@@ -3,10 +3,7 @@ nav {
 	--inaltime-meniu: 25px;
 	--latime-buton: 150px;
 	height: var(--inaltime-meniu);
-}
-
-#hamburger {
-	display: none;
+	color: var(--text-header);
 }
 
 ul {
