@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <%- include('../fragmente/head.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/resurse/css/galerie.css">
+    <body>
+        <%- include('../fragmente/header.ejs') %>
+        <main>
+            <div id="galerie">
+                <h2>Galeria noastră</h2>
+                <div id="galerie-img">
+                <% 
+                d=new Date();
+                oraCurenta=d.getHours();
+                let momentCurent;
+                if(oraCurenta >= 5 && oraCurenta < 12){
+                    momentCurent="dimineata";
+                }
+                else if(oraCurenta >=12 && oraCurenta < 20){
+                    momentCurent="zi";
+                }
+                else{
+                    momentCurent="noapte";
+                }
+                let imagFiltrate=imagini.filter(imag=>imag.timp===momentCurent || !imag.timp);
+                let lungime=imagFiltrate.length;
+                let rest=lungime % 3;
+                if(rest != 0)
+                    imagFiltrate=imagFiltrate.slice(0, lungime - rest);
+                for(let imag of imagFiltrate){
+                %>
+                    <figure>
+                        <picture>
+                            <source srcset="<%- imag.fisier_mediu %>" media="screen and (max-width:1024px)">
+                            <img title="<%- imag.descriere %>" src="<%- imag.fisier %>" alt="album">
+                        </picture>
+                        <figcaption><%- imag.descriere %></figcaption>
+                    </figure>
+                <% } %>
+                </div>
+            </div>
+        </main>
+        <%- include('../fragmente/footer.ejs') %>
+    </body>
+</html>

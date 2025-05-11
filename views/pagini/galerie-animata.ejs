@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <%- include("../fragmente/head.ejs")  %>
+        <link rel="stylesheet" type="text/css" href="/resurse/css/galerie.css">
+    </head>
+    <body>
+        <%- include("../fragmente/header.ejs");  %> 
+        <main>
+            <% 
+            let n = Math.random() * 3;
+            let numere = [4, 9, 16];
+            let val = numere[Math.floor(n)];
+            %>
+                <p>Valoarea aleasa este: <%= val %></p>
+                <% 
+                let imagFiltrate = imagini.filter(imag=>imag.descriere.length <= 12);
+                imagFiltrate = imagFiltrate.slice(0, val);
+                %>
+                <p>Imag filtrate length: <%= imagFiltrate.length %></p>
+                <div id="galerie-animata" tip="<%= val %>">
+                <% 
+                for(let imag of imagFiltrate){
+                    %>
+                        <figure>
+                            <picture>
+                                <source srcset="<%- imag.fisier %>" media="screen and (max-width:1024px)">
+                                <img title="<%- imag.descriere %>" src="<%- imag.fisier %>" alt="album">
+                            </picture>
+                            <figcaption><%- imag.descriere %></figcaption>
+                        </figure>
+                    <% } %>
+            </div>
+        </main>
+        <%- include("../fragmente/footer.ejs");  %>
+    </body>
+</html>
