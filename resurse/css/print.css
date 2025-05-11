@@ -3,7 +3,7 @@
 }
 
 @media print{
-    .album, #iframe_playlist, #imagineArtisti, iframe, embed, #link-top{
+    .album, #iframe_playlist, #imagineArtisti, iframe, embed, #clipPrezentare, #link-top{
         display: none !important;
     }
 

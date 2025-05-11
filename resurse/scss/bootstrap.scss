@@ -1,0 +1,41 @@
+@use "../../node_modules/bootstrap/scss/bootstrap.scss" with (
+  $body-bg: #E1EAFF,
+  $body-color: #554216,
+  $primary: #8093BF,
+  $secondary: #AA9564,
+  $border-color: #7F5739,
+
+  $font-family-base: 'Roboto Slab',
+  $headings-font-family: 'Bebas Neue',
+
+  $h1-font-size: 2rem,
+  $h2-font-size: 1.6rem,
+  $h3-font-size: 1.3rem,
+
+  $border-radius: 0.75rem,
+
+  $grid-breakpoints: (
+    md: 800px,
+    lg: 1200px
+  )
+);
+
+.dark-theme {
+    --bs-body-bg: #364C80;
+    --bs-body-color: #AA9564;
+    --bs-primary: #E1EAFF;
+    --bs-secondary: #8093BF;
+    --bs-border-color: #7F5739;
+}
+
+@media screen and (max-width:800px){
+    html{
+        font-size: 12.5px;
+    }
+}
+
+@media screen and (max-width:1200px){
+    html{
+        font-size: 16px;
+    }
+}

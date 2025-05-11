@@ -1,0 +1,125 @@
+{
+	"cale_galerie":"resurse/imagini/galerie",
+	"imagini": [
+		{
+			"fisier":"kind_of_blue.jpg",
+			"descriere":"Kind Of Blue",
+			"autor": "Jay Maisel",
+			"licenta": "Drepturi de autor © 1959 Columbia Records",
+			"timp":"dimineata"
+		},
+		{
+			"fisier":"abbey_road.jpg",
+			"descriere":"Abbey Road",
+			"autor": "Iain Macmilan",
+			"licenta": "Drepturi de autor © 1969 Apple Records",
+			"timp":"dimineata"
+		},
+		{
+			"fisier":"dark_side_of_the_moon.jpg",
+			"descriere":"The Dark Side Of The Moon",
+			"autor": "Hipgnosis",
+			"licenta": "Drepturi de autor © 1973 Harvest/Capitol Records",
+			"timp":"zi"
+		},
+		{
+			"fisier":"random_access_memories.jpg",
+			"descriere":"Random Access Memories",
+			"autor": "Warren Fu",
+			"licenta": "Drepturi de autor © 2013 Columbia Records",
+			"timp":"zi"
+		},
+		{
+			"fisier":"currents.jpg",
+			"descriere":"Currents",
+			"autor": "Robert Beatty",
+			"licenta": "Drepturi de autor © 2015 Interscope Records",
+			"timp":"noapte"
+		},
+		{
+			"fisier":"slow_rush.jpg",
+			"descriere":"The Slow Rush",
+			"autor": "Neil Krug",
+			"licenta": "Drepturi de autor © 2020 Interscope Records",
+			"timp":"noapte"
+		},
+		{
+			"fisier":"kid_a.jpg",
+			"descriere":"Kid A",
+			"autor": "Stanley Donwood",
+			"licenta": "Drepturi de autor © 2000 Parlophone/XL Recordings",
+			"timp":"noapte"
+		},
+		{
+			"fisier":"wolf.jpg",
+			"descriere":"Wolf",
+			"autor": "Mark Ryden",
+			"licenta": "Drepturi de autor © 2013 Odd Future Records",
+			"timp":"zi"
+		},
+		{
+			"fisier":"in_rainbows.jpg",
+			"descriere":"In Rainbows",
+			"autor": "Stanley Donwood",
+			"licenta": "Drepturi de autor © 2007 XL Recordings",
+			"timp":"dimineata"
+		},
+		{
+			"fisier":"circles.jpg",
+			"descriere":"Circles",
+			"autor": "Sam Mason",
+			"licenta": "Drepturi de autor © 2020 Warner Records",
+			"timp":"zi"
+		},
+		{
+			"fisier":"2000.jpg",
+			"descriere":"2000",
+			"autor": "Joey Bada$$",
+			"licenta": "Drepturi de autor © 2013 Pro Era Records",
+			"timp":"dimineata"
+		}
+		,
+		{
+			"fisier":"college_dropout.jpg",
+			"descriere":"The College Dropout",
+			"autor": "Eric Duvauchelle",
+			"licenta": "Drepturi de autor © 2004 Roc-A-Fella Records"
+		},
+		{
+			"fisier":"great_escape.jpg",
+			"descriere":"The Great Escape",
+			"autor": "Paul Postle",
+			"licenta": "Drepturi de autor © 1995 Food/Parlophone"
+		},
+		{
+			"fisier":"heaven_hell.jpg",
+			"descriere":"Heaven Or Hell",
+			"autor": "Don Toliver",
+			"licenta": "Drepturi de autor © 2020 Cactus Jack Records"
+		},
+		{
+			"fisier":"illmatic.jpg",
+			"descriere":"Illmatic",
+			"autor": "Aimee Macauley",
+			"licenta": "Drepturi de autor © 1994 Columbia Records"
+		},
+		{
+			"fisier":"life_of_a_don.jpg",
+			"descriere":"Life of a DON",
+			"autor": "Don Toliver",
+			"licenta": "Drepturi de autor © 2021 Cactus Jack Records"
+		},
+		{
+			"fisier":"long_live_asap.jpg",
+			"descriere":"Long Live A$AP",
+			"autor": "Amy Winewright",
+			"licenta": "Drepturi de autor © 2013 RCA Records"
+		},
+		{
+			"fisier":"trilogy.jpg",
+			"descriere":"Trilogy",
+			"autor": "The Weeknd",
+			"licenta": "Drepturi de autor © 2012 XO/Republic Records"
+		}
+	]
+}
