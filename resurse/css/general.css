@@ -1,4 +1,4 @@
-:root{
+body{
     --background-header: #FFF6E0;
     --background-main: #E1EAFF;
     --background-footer: #364C80;
@@ -6,6 +6,18 @@
     --text-main: #554216;
     --text-footer: #AA9564;
     --culoare-border: #7F5739;
+    --link-vizitat: #997A5D;
+    --background-link: #86736197;
+}
+
+body.dark{
+    --text-header: #fcf9f1;
+    --text-main: #a7b4d1;
+    --text-footer: #506ba9;
+    --background-header: #162b5d;
+    --background-main: #3a241a;
+    --background-footer: #534831;
+    --culoare-border: #7e653c;
     --link-vizitat: #997A5D;
     --background-link: #86736197;
 }
@@ -407,13 +419,13 @@ table tr:hover td {
 
 #div-duotone::before{
     background-color: var(--background-footer);
-    mix-blend-mode: darken;
+    mix-blend-mode: lighten;
     opacity: 0.4;
 }
 
-#div-duotone::before{
+#div-duotone::after{
     background-color: var(--background-header);
-    mix-blend-mode: lighten;
+    mix-blend-mode: darken;
     opacity: 0.4;
 }
 
