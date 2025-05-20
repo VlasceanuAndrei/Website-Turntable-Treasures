@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <%- include("../fragmente/head.ejs") %>
+    <link rel="stylesheet" type="text/css" href="/resurse/css/produse.css">
+    <script type="text/javascript" src=/resurse/js/comparare.js></script>
+    <body>
+        <%- include("../fragmente/header.ejs") %>
+        <main>
+            <section>
+                <h2>Pagină produs</h2>
+                    <article id="art-produs">
+                        <div id="container-comparare" style="display: none;">
+                            <h3>Produse de comparat</h3>
+                            <ul id="lista-comparare"></ul>
+                        </div>
+                        <input type="checkbox" class="select-produs" value="<%-prod.id %>" autocomplete="off">
+                        <h3><span class="nume"><%- locals.prod.nume %></span></h3>
+                        <p>ID: <span class="id"><%- locals.prod.id %></span></p>
+                        <p>Preț: <span class="pret"><%- locals.prod.pret %> RON</span></p>
+                        <p>Descriere: <span class="descriere"><%- locals.prod.descriere %></span></p>
+                        <p>Categorie: <span class="categorie"><%- locals.prod.categorie %></span></p>
+                        <p>Tip ediție: <span class="tip-editie"><%- locals.prod.tip_editie %></span></p>
+                        <p>Număr piese: <span class="nr-piese"><%- locals.prod.nr_piese %></span></p>
+                        <p>Data lansării: 
+                            <% 
+                            function formatData(dataSql) {
+                                if (!dataSql) return "";
+                                const luni = ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"];
+                                const zile = ["Duminica", "Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambata"];
+                                const d = new Date(dataSql);
+                                return `${d.getDate()}(${zile[d.getDay()]})/${luni[d.getMonth()]}/${d.getFullYear()}`;
+                            }
+                            %>
+                            <time datetime="<%- locals.prod.data_lansare %>"><%- formatData(locals.prod.data_lansare) %></time>
+                        </p>
+                        <p>Culoare vinil: <span class="culoare-vinil"><%- locals.prod.culoare_vinil %></span></p>
+                        <p>Taguri: <span class="taguri"><%- locals.prod.tags %></span></p>
+                        <p>Bestseller: <span class="bestseller"><%- locals.prod.bestseller ? "Da" : "Nu" %></span></p>
+                        <figure class="imag-produs">
+                            <img src="<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
+                        </figure>    
+                    </article>
+                
+            </section>
+        </main>
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

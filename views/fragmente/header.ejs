@@ -6,10 +6,25 @@
         <span class="hamburgerLine"></span>
         <span class="hamburgerLine"></span>
         </label>
+    <div class="form-check form-switch tema-switch">
+        <input class="form-check-input" type="checkbox" id="switch-tema" role="switch">
+        <label class="form-check-label" for="switch-tema">
+        <i class="bi bi-sun-fill" id="icon-light"></i>
+        <i class="bi bi-moon-fill" id="icon-dark"></i>
+        </label>
+    </div>
     <nav>
         <ul class="meniu">
             <li id="butonHome"><a href="/#" class="iconHome">
-                <i class="fa-solid fa-house"></i> <span class="textHome">Home</span></a></li>
+                <i class="fa-solid fa-house"></i> <span class="textHome">Home</span></a>
+                <ul class="subcategorie">
+                    <li class="butonSubmeniu"><a href="/#sectiune2">Adăugate recent</a></li>
+                    <li class="butonSubmeniu"><a href="/#sectiune3">Bestsellere</a></li>
+                    <li class="butonSubmeniu"><a href="/#sectiune5">Catalog</a></li>
+                    <li class="butonSubmeniu"><a href="/#sectiune7">Artiști</a></li>
+                    <li class="butonSubmeniu"><a href="/#tabel">Festivaluri</a></li>
+                </ul>
+            </li>
             <li class="butonMeniu"><a href="/#sectiune1Despre">Despre noi</a>
                 <ul class="subcategorie">
                     <li class="butonSubmeniu"><a href="/#subsectiune1-1">Povestea noastră</a></li>
@@ -23,8 +38,6 @@
                     <li class="butonSubmeniu"><a href="/galerie-animata">Galerie animată</a></li>
                 </ul>
             </li>
-            <li class="butonMeniu"><a href="/#sectiune2">Adăugate recent</a></li>
-            <li class="butonMeniu"><a href="/#sectiune3">Bestsellere</a></li>
             <li class="butonMeniu"><a href="/#sectiune4">Link-uri utile</a>
                 <ul class="subcategorie">
                     <li class="butonSubmeniu"><a href="/#subsectiune4-1">Genius</a></li>
@@ -32,10 +45,15 @@
                     <li class="butonSubmeniu"><a href="/#subsectiune4-3">Întrebări frecvente</a></li>
                 </ul>
             </li>
-            <li class="butonMeniu"><a href="/#sectiune5">Catalog</a></li>
-            <!--<li class="butonMeniu"><a href="/#sectiune6">Playlist-uri</a></li>-->
-            <li class="butonMeniu"><a href="/#sectiune7">Artiști</a></li>
-            <li class="butonMeniu"><a href="/#tabel">Festivaluri</a></li>
+            <li class="butonMeniu"><a href="/produse">Produse</a>
+                <ul class="subcategorie">
+                    <li class="butonSubmeniu"><a href="/produse">Toate</a></li>
+                    <li class="butonSubmeniu"><a href="/produse?tip=Hip%20Hop">Hip Hop</a></li>
+                    <li class="butonSubmeniu"><a href="/produse?tip=R%26B">R&B</a></li>
+                    <li class="butonSubmeniu"><a href="/produse?tip=Rock">Rock</a></li>
+                    <li class="butonSubmeniu"><a href="/produse?tip=Alternative">Alternative</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
 </header>

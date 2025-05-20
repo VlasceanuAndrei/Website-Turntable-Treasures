@@ -13,6 +13,13 @@
   $h3-font-size: 1.3rem,
 
   $border-radius: 0.75rem,
+  $border-width: 2px,
+  $btn-border-width: 20px,
+
+  $form-range-track-bg: var(--bs-border-color),
+  $form-range-thumb-bg: black,
+  $form-range-thumb-width: 1.5rem,
+  $form-range-track-width: 30%,
 
   $grid-breakpoints: (
     md: 800px,
@@ -26,6 +33,22 @@
     --bs-primary: #E1EAFF;
     --bs-secondary: #8093BF;
     --bs-border-color: #7F5739;
+}
+
+#div-textarea{
+    max-width: 50%;
+}
+
+#filtrare, #resetare, #sortCrescNume, #sortDescrescNume{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--bs-body-color);
+    border: 2px solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
 }
 
 @media screen and (max-width:800px){

@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html lang="ro">
     <%- include('../fragmente/head.ejs') %>
+    <script type="text/javascript" src=/resurse/js/oferte.js></script>
     <body>
         <%- include('../fragmente/header.ejs') %>
         <main>
             <p id="watermark"></p>
             <p id="banner"></p>
+            <section id="anunturi">
+                <h2>OFERTE SPECIALE</h2>
+                <% if (locals.oferta) { %>
+                <div id="oferta" class="banner-oferta">
+                    <p>REDUCERE <strong><%= oferta.reducere %>%</strong> la toate albumele din categoria <strong><%= oferta.categorie %></strong></p>
+                    <div id="oferta-timer" data-end="<%= oferta['data-finalizare'] %>"></div>
+                    <p class="descriere-oferta">Profită acum de această ofertă specială Turntable Treasures!</p>
+                </div>
+                <% } else { %>
+                <div class="banner-oferta">
+                    <p>Momentan nu există oferte active. Urmărește această secțiune pentru reduceri viitoare!</p>
+                </div>
+                <% } %>
+            </section>
             <div id="grid-pagina">
                 <section id="sectiune1">
                     <figure id="magazin">

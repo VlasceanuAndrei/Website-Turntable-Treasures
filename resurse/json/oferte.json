@@ -1,0 +1,64 @@
+{
+    "oferte": [
+        {
+            "categorie": "R&B",
+            "data-incepere": "2025-05-28T10:00:00.000Z",
+            "data-finalizare": "2025-05-29T10:00:00.000Z",
+            "reducere": "50"
+        },
+        {
+            "categorie": "Rock",
+            "data-incepere": "2025-05-27T10:00:00.000Z",
+            "data-finalizare": "2025-05-28T10:00:00.000Z",
+            "reducere": "10"
+        },
+        {
+            "categorie": "Alternative",
+            "data-incepere": "2025-05-26T10:00:00.000Z",
+            "data-finalizare": "2025-05-27T10:00:00.000Z",
+            "reducere": "25"
+        },
+        {
+            "categorie": "Hip Hop",
+            "data-incepere": "2025-05-25T10:00:00.000Z", 
+            "data-finalizare": "2025-05-26T10:00:00.000Z",
+            "reducere": "15"
+        },
+        {
+            "categorie": "R&B",
+            "data-incepere": "2025-05-24T10:00:00.000Z",
+            "data-finalizare": "2025-05-25T10:00:00.000Z",
+            "reducere": "35"
+        },
+        {
+            "categorie": "Rock",
+            "data-incepere": "2025-05-23T10:00:00.000Z",
+            "data-finalizare": "2025-05-24T10:00:00.000Z",
+            "reducere": "5"
+        },
+        {
+            "categorie": "Alternative",
+            "data-incepere": "2025-05-22T10:00:00.000Z",
+            "data-finalizare": "2025-05-23T10:00:00.000Z",
+            "reducere": "45"
+        },
+        {
+            "categorie": "Rock",
+            "data-incepere": "2025-05-21T10:00:00.000Z",
+            "data-finalizare": "2025-05-22T10:00:00.000Z",
+            "reducere": "50"
+        },
+        {
+            "categorie": "R&B",
+            "data-incepere": "2025-05-20T10:00:00.000Z",
+            "data-finalizare": "2025-05-21T10:00:00.000Z",
+            "reducere": "35"
+        },
+        {
+            "categorie": "Hip Hop",
+            "data-incepere": "2025-05-19T10:00:00.000Z",
+            "data-finalizare": "2025-05-20T10:00:00.000Z",
+            "reducere": "25"
+        }
+    ]
+}

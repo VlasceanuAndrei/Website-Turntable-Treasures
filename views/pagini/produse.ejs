@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <%- include("../fragmente/head.ejs") %>
+        <link rel="stylesheet" type="text/css" href="/resurse/css/produse.css">
+        <script type="text/javascript" src=/resurse/js/produse.js></script>
+        <script type="text/javascript" src=/resurse/js/comparare.js></script>
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+    <main>
+        <div id="container-comparare" style="display: none;">
+            <h3>Produse de comparat</h3>
+            <ul id="lista-comparare"></ul>
+        </div>
+        <label> Nume: <input type="text" id="inp-nume"></label>
+        <div> Durata albumului:
+            <p><label>Scurtă
+                <input id="i_rad1" name="gr_rad" value="0:11" type="radio"/>
+            </label></p>
+            <p><label>Normală
+                <input id="i_rad2" name="gr_rad" value="11:16" type="radio"/>
+            </label>
+            <p><label>Lungă
+                <input id="i_rad3" name="gr_rad" value="16:99999999" type="radio"/>
+            </label>
+            <p><label>Toate
+                <input id="i_rad4" checked name="gr_rad" value="toate" type="radio"/>
+            </label>
+        </div>
+
+        <div class="pret-container">
+            <label for="inp-pret">Pret minim: 
+                <input type="range" id="inp-pret" value="<%= pret_min %>" min="<%= pret_min %>" max="<%= pret_max %>" class="form-range">
+                <span id="infoRange"><%= pret_min %></span>
+            </label>
+            <div class="pret-limits">
+                <span id="span-min"><%= pret_min %></span>
+                <span id="span-max"><%= pret_max %></span>
+            </div>
+        </div>
+
+        <div id="div-datalist">
+            <label>Genul muzical:
+                <input type="text" id="inp-gen" list="lista-genuri" placeholder="Alege un gen muzical...">
+                    <datalist id="lista-genuri">
+                        <option value="Hip Hop">Hip Hop</option>
+                        <option value="R&B">R&B</option>
+                        <option value="Rock">Rock</option>
+                        <option value="Alternative">Alternative</option>
+                        <option value="toate">toate</option>
+                    </datalist>
+            </label>
+        </div>
+
+        <div id="div-checkbox">
+            <label>
+                Taguri:
+                <input type="checkbox" id="check-clasic" name="tags" value="clasic" checked> clasic
+            </label>
+            <label>
+                <input type="checkbox" id="check-experimental" name="tags" value="experimental" checked> experimental
+            </label>
+            <label>
+                <input type="checkbox" id="check-psihedelic" name="tags" value="psihedelic" checked> psihedelic
+            </label>
+            <label>
+                <input type="checkbox" id="check-liric" name="tags" value="liric" checked> liric
+            </label>
+            <label>
+                <input type="checkbox" id="check-controversat" name="tags" value="controversat" checked> controversat
+            </label>
+        </div>
+
+        <div id="div-textarea" class="form-floating mb-3">
+            <p style="font-size: 0.9rem">Vreau ca descrierea sa cuprindă:</p>
+            <textarea id="inp-descriere" class="form-control" rows="3" cols="50" placeholder="Adaugă orice alte observații sau cerințe speciale..."></textarea>
+        </div>
+
+        <div id="div-bestseller">
+            <label>Bestseller? 
+                <select id="inp-bestseller" size="1">
+                    <option value="FALSE" selected>Nu-mi pasă...</option>
+                    <option value="TRUE">DA, vreau doar bestsellere!</option>
+                </select>
+            </label>
+        </div>
+
+        <div id="div-culori">
+            <label>Culori vinil disponibile:
+                <select id="inp-culori" multiple size="4">
+                    <option value="Negru">Negru</option>
+                    <option value="Transparent">Transparent</option>
+                    <option value="Roșu">Roșu</option>
+                    <option value="Maro">Maro</option>
+                </select>
+                <span>(Ține apăsat Ctrl pentru a selecta mai multe opțiuni)</span>
+            </label>
+        </div>
+
+        <div class="btn-group">
+            <button class="c1 c2 c3" id="filtrare">
+                <i class="bi bi-filter"></i><p class="btnText">Filtreaza</p></button>
+            <button id="resetare">
+                <i class="bi bi-rewind"></i><p class="btnText">Reseteaza</p></button>
+            <button id="sortCrescNume">
+                <i class="bi bi-sort-alpha-down"></i><p class="btnText">Sorteaza crescator dupa pret si nume</p></button>
+            <button id="sortDescrescNume">
+                <i class="bi bi-sort-alpha-down-alt"></i><p class="btnText">Sorteaza descrescator dupa pret si nume</p></button>
+        </div>
+
+        <p id="p-suma">Apăsați Ctrl+"q" pentru suma preturilor produselor afișate. </p>
+
+        <section id="produse">
+        <h2>Albume</h2>
+            <div class="grid-produse">
+                <% for(let prod of locals.produse) { %>
+                <article class="produs">
+                    <h3 class="nume">Denumirea albumului: <a href="/produs/<%-prod.id %>"><span class="val-nume"><%- prod.nume%></span></a></h3>
+                    <div class="info-prod">
+                        <p class="categorie">Categorie: <span class="val-categorie"><%- prod.categorie%></span></p>
+                        <p class="pret">
+                            <% if (locals.oferta && prod.categorie === oferta.categorie) { %>
+                                Preț: <s><%= prod.pret %> RON</s> - <span class="pret-redus"><%= (prod.pret * (1 - oferta.reducere/100)).toFixed(2) %> RON</span>
+                            <% } else { %>
+                                Preț: <span class="val-pret"><%- prod.pret%></span> RON
+                            <% } %>
+                        </p>
+                        <p class="culoare">Culoare vinil: <span class="val-culoare"><%- prod.culoare_vinil%></span></p>
+                    </div>
+                    <p class="bestseller">Bestseller: <span class="val-bestseller"><%- prod.bestseller ? "Da" : "Nu"%></span></p>
+                    <p class="taguri">Taguri: <span class="val-taguri"><%- prod.tags %></span></p>
+                    <p class="descriere">Informații despre proiect: <span class="val-descriere"><%- prod.descriere %></span></p>
+                    <meta class="val-nr-piese" content="<%- prod.nr_piese%>">
+                    <figure>
+                        <a href="/produs/<%-prod.id %>"><img src="<%- prod.imagine %>" style="width:50%;height:auto;" alt="[imagine <%- prod.nume %>]" /></a>
+                    </figure>
+                    <div id="data-lansare">
+                        <% 
+                        function formatData(dataSql) {
+                            if (!dataSql) return "";
+                            const luni = ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"];
+                            const zile = ["Duminica", "Luni", "Marti", "Miercuri", "Joi", "Vineri", "Sambata"];
+                            const d = new Date(dataSql);
+                            return `${d.getDate()}(${zile[d.getDay()]})/${luni[d.getMonth()]}/${d.getFullYear()}`;
+                        }
+                        %>
+                        <time datetime="<%- prod.data_lansare %>">Data lansării: <%= formatData(prod.data_lansare) %></time>
+                    </div>
+                    <label class="selecteaza-produs">
+                        Selectează:<br/>
+                        <input type="checkbox" class="select-produs" value="<%-prod.id %>" autocomplete="off">
+                    </label>
+                </article>
+                <% }%>
+            </div>
+        </section>
+
+        <div id="fara-produse">
+            <p>Nu au fost găsite produse care să respecte criteriile.</p>
+            <p>Mai căutați...</p>
+        </div>
+    </main>
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>
