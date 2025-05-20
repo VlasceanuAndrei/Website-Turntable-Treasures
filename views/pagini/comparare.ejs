@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <%- include("../fragmente/head.ejs") %>
+    <script src="/resurse/js/comparare.js"></script>
+    <body>
+        <%- include("../fragmente/header") %>
+        <main>
+            <h1>Comparare albume</h1>
+            
+            <table border="1" cellpadding="10" cellspacing="0">
+                <tr>
+                    <th>Caracteristică</th>
+                    <th><%= albume[0].nume %></th>
+                    <th><%= albume[1].nume %></th>
+                </tr>
+                <tr>
+                    <td>Imagine</td>
+                    <td><img src="<%= albume[0].imagine %>" alt="<%= albume[0].nume %>" style="width:100px"></td>
+                    <td><img src="<%= albume[1].imagine %>" alt="<%= albume[1].nume %>" style="width:100px"></td>
+                </tr>
+                <tr>
+                    <td>Categorie</td>
+                    <td><%= albume[0].categorie %></td>
+                    <td><%= albume[1].categorie %></td>
+                </tr>
+                <tr>
+                    <td>Preț</td>
+                    <td><%= albume[0].pret %> RON</td>
+                    <td><%= albume[1].pret %> RON</td>
+                </tr>
+                <tr>
+                    <td>Număr piese</td>
+                    <td><%= albume[0].nr_piese %></td>
+                    <td><%= albume[1].nr_piese %></td>
+                </tr>
+                <tr>
+                    <td>Culoare vinil</td>
+                    <td><%= albume[0].culoare_vinil %></td>
+                    <td><%= albume[1].culoare_vinil %></td>
+                </tr>
+                <tr>
+                    <td>Taguri</td>
+                    <td><%= albume[0].tags %></td>
+                    <td><%= albume[1].tags %></td>
+                </tr>
+                <tr>
+                    <td>Descriere</td>
+                    <td><%= albume[0].descriere %></td>
+                    <td><%= albume[1].descriere %></td>
+                </tr>
+                <tr>
+                    <td>Bestseller</td>
+                    <td><%= albume[0].bestseller ? "Da" : "Nu" %></td>
+                    <td><%= albume[1].bestseller ? "Da" : "Nu" %></td>
+                </tr>
+                <tr>
+                    <td>Ediție</td>
+                    <td><%= albume[0].tip_editie %></td>
+                    <td><%= albume[1].tip_editie %></td>
+                </tr>
+                <tr>
+                    <td>Data lansării</td>
+                    <td><%= (new Date(albume[0].data_lansare)).toLocaleDateString('ro-RO') %></td>
+                    <td><%= (new Date(albume[1].data_lansare)).toLocaleDateString('ro-RO') %></td>
+                </tr>
+            </table>
+            <div id="container-comparare" style="display: none;">
+                <h3>Produse de comparat</h3>
+                <ul id="lista-comparare"></ul>
+            </div>
+        </main>
+        <%- include("../fragmente/footer") %>
+    </body>
+</html>
