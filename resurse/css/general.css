@@ -508,6 +508,14 @@ hr::after{
     animation: animatieReflexie 0.5s linear infinite;
 }
 
+#oferta-timer.ultimele-secunde {
+    background-color: #ff0000;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: 25%;
+}
+
 @keyframes animatieReflexie{
     0%{
         mask-position: 0 0;
