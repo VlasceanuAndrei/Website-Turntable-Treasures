@@ -2,7 +2,7 @@ window.onload = function(){
     let produseInitiale = Array.from(document.getElementsByClassName("produs"));
     btn = document.getElementById("filtrare");
     btn.onclick = function(){
-        const regex = /[^a-zA-Z0-9\s$]/;
+        const regex = /[^a-zA-Z0-9\s$,]/;
         let btnInputNume = document.getElementById("inp-nume");
         let inpNume = document.getElementById("inp-nume").value.trim().toLowerCase();
         if(inpNume && regex.test(inpNume)){
@@ -120,12 +120,6 @@ window.onload = function(){
                 contorProduse++;
             }
         }
-        if(!contorProduse){
-            document.getElementById("fara-produse").style.display = "block";
-        }
-        else {
-            document.getElementById("fara-produse").style.display = "none";
-        }
         marcProduseIeftine();
     }
 
@@ -239,7 +233,7 @@ window.onload = function(){
         }
     }
 
-
+    //bonus ieftin
     function marcProduseIeftine() {
         const existingMarkers = document.getElementsByClassName("cheapest-marker");
         while (existingMarkers.length > 0) {
@@ -247,7 +241,6 @@ window.onload = function(){
         }
 
         const produse = document.getElementsByClassName("produs");
-        
         const categorii = {};
         
         for (let prod of produse) {
