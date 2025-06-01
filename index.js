@@ -69,7 +69,7 @@ function compileazaScss(caleScss, caleCss){
 }
 
 vFisiere=fs.readdirSync(obGlobal.folderScss);
-for( let numeFis of vFisiere ){
+for(let numeFis of vFisiere ){
     if (path.extname(numeFis)==".scss"){
         compileazaScss(numeFis);
     }
@@ -85,11 +85,11 @@ fs.watch(obGlobal.folderScss, function(eveniment, numeFis){
     }
 })
 
-// bonus stergere fisiere backup "expirate"
+// bonus stergere fisiere backup
 const tempBackup = path.join(__dirname, "backup", "resurse", "css");
 const T = 5;
 function cleanupBackup() {
-    const threshold = Date.now() - (T * 60 * 1000);
+    const limita = Date.now() - (T * 60 * 1000);
     fs.readdir(tempBackup, (err, files) => {
       if (err) return;
       
@@ -99,7 +99,7 @@ function cleanupBackup() {
         fs.stat(filePath, (err, stats) => {
           if (err) return;
           
-          if (stats.mtimeMs < threshold) {
+          if (stats.mtimeMs < limita) {
             fs.unlink(filePath, () => {});
           }
         });
@@ -164,7 +164,6 @@ function afisareEroare(res, identificator, titlu, text, imagine){
         var textCustom=text || err.text;
         var imagineCustom=imagine || err.imagine;
 
-
     }
     res.render("pagini/eroare", {
         titlu: titluCustom,
@@ -173,44 +172,88 @@ function afisareEroare(res, identificator, titlu, text, imagine){
 })
 }
 
-
 // bonus oferte
-function getCurrentOffer() {
+const caleOferte = path.join(__dirname, "resurse/json/oferte.json");
+const intervalOferta = 2 * 60 * 1000;
+const reduceriDisponibile = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+
+function citesteOferte() {
+    if (!fs.existsSync(caleOferte)) {
+        return [];
+    }
     try {
-        const offerFilePath = path.join(__dirname, "resurse", "json","oferte.json");
-        if (!fs.existsSync(offerFilePath)) {
-            console.log("Fișierul oferte.json nu există!");
-            return null;
+        const continut = fs.readFileSync(caleOferte, "utf-8");
+        if (!continut || continut.trim().length === 0) {
+            salveazaOferte([]);
+            return [];
         }
-        
-        const fileContent = fs.readFileSync(offerFilePath, 'utf8');
-        const data = JSON.parse(fileContent);
-        const offers = data.oferte || [];
-        
-        if (offers.length === 0) {
-            console.log("Nu există oferte în fișier!");
-            return null;
-        }
-        
-        const currentOffer = offers[0];
-        const endDate = new Date(currentOffer['data-finalizare']);
-        const now = new Date();
-        
-        console.log("Data curentă:", now);
-        console.log("Data finalizare ofertă:", endDate);
-        console.log("Oferta validă:", endDate > now);
-        
-        if (endDate > now) {
-            return currentOffer;
-        } else {
-            console.log("Oferta a expirat!");
-            return null;
-        }
+        const data = JSON.parse(continut);
+        return data.oferte || [];
     } catch (error) {
-        console.error('Eroare la obținerea ofertei curente:', error);
-        return null;
+        salveazaOferte([]);
+        return [];
     }
 }
+
+function salveazaOferte(oferte) {
+    fs.writeFileSync(caleOferte, JSON.stringify({ oferte }, null, 2), "utf-8");
+}
+
+function genereazaOferte() {
+    client.query("select * from unnest(enum_range(null::categ_album))", function(err, rezultat) {
+        if (err) return;
+        
+        const categorii = rezultat.rows.map(row => row.unnest);
+        const oferte = citesteOferte();
+        const ultimaOferta = oferte[0];
+        
+        let categorieNoua;
+        do {
+            categorieNoua = categorii[Math.floor(Math.random() * categorii.length)];
+        } while (ultimaOferta && categorieNoua === ultimaOferta.categorie && categorii.length > 1);
+        
+        const reducere = reduceriDisponibile[Math.floor(Math.random() * reduceriDisponibile.length)];
+        
+        const dataIncepere = new Date();
+        const dataFinalizare = new Date(dataIncepere.getTime() + intervalOferta);
+        
+        oferte.unshift({
+            categorie: categorieNoua,
+            "data-incepere": dataIncepere.toISOString(),
+            "data-finalizare": dataFinalizare.toISOString(),
+            reducere: reducere.toString()
+        });
+        
+        salveazaOferte(oferte);
+        console.log(`Ofertă nouă: ${categorieNoua} - ${reducere}%`);
+    });
+}
+
+function curatareOferte() {
+    const T2 = 10080; //7 zile
+    const caleOferte = path.join(__dirname, "resurse", "json", "oferte.json");
+    const pragVechi = Date.now() - (T2 * 60 * 1000);
+    
+    fs.readFile(caleOferte, 'utf8', (err, continut) => {
+        if (err) return;
+        
+        try {
+            const data = JSON.parse(continut);
+            const oferteNoi = data.oferte.filter(oferta => {
+                return new Date(oferta['data-finalizare']).getTime() > pragVechi;
+            });
+            
+            if (oferteNoi.length !== data.oferte.length) {
+                data.oferte = oferteNoi;
+                fs.writeFile(caleOferte, JSON.stringify(data, null, 4), () => {});
+            }
+        } catch {}
+    });
+}
+genereazaOferte();
+curatareOferte();
+setInterval(genereazaOferte, intervalOferta);
+setInterval(curatareOferte, 60 * 1000);
 
 app.use("/resurse", function(req, res, next){
     let caleFisier = path.join(__dirname, "resurse", req.url);
@@ -250,11 +293,10 @@ app.get("/produse", function(req, res){
                 afisareEroare(res, 2);
             }
             else{
-                let ofertaCurenta = getCurrentOffer();
+                const oferte = citesteOferte();
                 res.render("pagini/produse", {produse: rez.rows, optiuni:rezOptiuni.rows,
                                                 pret_min: parseFloat(rezPreturi.rows[0].pret_min),
-                                                pret_max: parseFloat(rezPreturi.rows[0].pret_max),
-                                                oferta: ofertaCurenta})
+                                                pret_max: parseFloat(rezPreturi.rows[0].pret_max)})
             }
             })
         })
@@ -272,6 +314,7 @@ app.get("/produs/:id", function(req, res){
                 afisareEroare(res, 404);
             }
             else{
+                const oferte = citesteOferte();
                 res.render("pagini/produs", {prod: rez.rows[0]})
             }
         }
@@ -283,7 +326,8 @@ app.get("/favicon.ico", function(req, res){
 })
 
 app.get(["/","/index","/home"], function(req, res){
-    let ofertaCurenta = getCurrentOffer();
+    const oferte = citesteOferte();
+    const ofertaCurenta = oferte.length > 0 && new Date(oferte[0]['data-finalizare']) > new Date() ? oferte[0] : null;
     res.render("pagini/index",{ip:req.ip, oferta: ofertaCurenta});
 })
 
@@ -295,16 +339,13 @@ app.get(["/galerie-animata"], function(req, res){
     res.render("pagini/galerie-animata", {imagini:obGlobal.obImagini.imagini});
 })
 
-
 app.get("/index/a", function(req, res){
     res.render("pagini/index");
 })
 
-
 app.get("/cerere", function(req, res){
     res.send("<p style='color:blue'>Buna ziua</p>")
 })
-
 
 app.get("/fisier", function(req, res, next){
     res.sendfile(path.join(__dirname,"package.json"));
@@ -338,7 +379,6 @@ app.get("/comparare", function(req, res){
 app.get("/*.ejs", function(req, res, next){
     afisareEroare(res,400);
 })
-
 
 app.get("/*", function(req, res, next){
     try{
@@ -377,7 +417,6 @@ vectFoldere.forEach(folder => {
         console.log("Folderul există deja.");
     }
 });
-
 
 app.listen(8080);
 console.log("Serverul a pornit");

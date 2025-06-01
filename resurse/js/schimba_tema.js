@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", function(){
-    if(localStorage.getItem("tema")){ // functionalitatea de mentinere a temei intre pagini
+    if(localStorage.getItem("tema")){
         document.body.classList.add("dark");
         document.getElementById("switch-tema").checked = true;
     }

@@ -1,64 +1,160 @@
 {
-    "oferte": [
-        {
-            "categorie": "R&B",
-            "data-incepere": "2025-05-28T10:00:00.000Z",
-            "data-finalizare": "2025-05-29T10:00:00.000Z",
-            "reducere": "50"
-        },
-        {
-            "categorie": "Rock",
-            "data-incepere": "2025-05-27T10:00:00.000Z",
-            "data-finalizare": "2025-05-28T10:00:00.000Z",
-            "reducere": "10"
-        },
-        {
-            "categorie": "Alternative",
-            "data-incepere": "2025-05-26T10:00:00.000Z",
-            "data-finalizare": "2025-05-27T10:00:00.000Z",
-            "reducere": "25"
-        },
-        {
-            "categorie": "Hip Hop",
-            "data-incepere": "2025-05-25T10:00:00.000Z", 
-            "data-finalizare": "2025-05-26T10:00:00.000Z",
-            "reducere": "15"
-        },
-        {
-            "categorie": "R&B",
-            "data-incepere": "2025-05-24T10:00:00.000Z",
-            "data-finalizare": "2025-05-25T10:00:00.000Z",
-            "reducere": "35"
-        },
-        {
-            "categorie": "Rock",
-            "data-incepere": "2025-05-23T10:00:00.000Z",
-            "data-finalizare": "2025-05-24T10:00:00.000Z",
-            "reducere": "5"
-        },
-        {
-            "categorie": "Alternative",
-            "data-incepere": "2025-05-22T10:00:00.000Z",
-            "data-finalizare": "2025-05-23T10:00:00.000Z",
-            "reducere": "45"
-        },
-        {
-            "categorie": "Rock",
-            "data-incepere": "2025-05-21T10:00:00.000Z",
-            "data-finalizare": "2025-05-22T10:00:00.000Z",
-            "reducere": "50"
-        },
-        {
-            "categorie": "R&B",
-            "data-incepere": "2025-05-20T10:00:00.000Z",
-            "data-finalizare": "2025-05-21T10:00:00.000Z",
-            "reducere": "35"
-        },
-        {
-            "categorie": "Hip Hop",
-            "data-incepere": "2025-05-19T10:00:00.000Z",
-            "data-finalizare": "2025-05-20T10:00:00.000Z",
-            "reducere": "25"
-        }
-    ]
+  "oferte": [
+    {
+      "categorie": "R&B",
+      "data-incepere": "2025-06-01T19:43:22.331Z",
+      "data-finalizare": "2025-06-01T19:45:22.331Z",
+      "reducere": "5"
+    },
+    {
+      "categorie": "Alternative",
+      "data-incepere": "2025-06-01T19:41:22.434Z",
+      "data-finalizare": "2025-06-01T19:43:22.434Z",
+      "reducere": "45"
+    },
+    {
+      "categorie": "Hip Hop",
+      "data-incepere": "2025-06-01T19:40:24.302Z",
+      "data-finalizare": "2025-06-01T19:42:24.302Z",
+      "reducere": "40"
+    },
+    {
+      "categorie": "Alternative",
+      "data-incepere": "2025-06-01T19:38:58.784Z",
+      "data-finalizare": "2025-06-01T19:40:58.784Z",
+      "reducere": "45"
+    },
+    {
+      "categorie": "Rock",
+      "data-incepere": "2025-06-01T19:37:04.304Z",
+      "data-finalizare": "2025-06-01T19:39:04.304Z",
+      "reducere": "5"
+    },
+    {
+      "categorie": "Alternative",
+      "data-incepere": "2025-06-01T19:36:26.238Z",
+      "data-finalizare": "2025-06-01T19:38:26.238Z",
+      "reducere": "20"
+    },
+    {
+      "categorie": "Hip Hop",
+      "data-incepere": "2025-06-01T19:34:26.249Z",
+      "data-finalizare": "2025-06-01T19:36:26.249Z",
+      "reducere": "15"
+    },
+    {
+      "categorie": "Rock",
+      "data-incepere": "2025-06-01T19:33:48.741Z",
+      "data-finalizare": "2025-06-01T19:35:48.741Z",
+      "reducere": "35"
+    },
+    {
+      "categorie": "Alternative",
+      "data-incepere": "2025-06-01T19:33:01.923Z",
+      "data-finalizare": "2025-06-01T19:35:01.923Z",
+      "reducere": "45"
+    },
+    {
+      "categorie": "R&B",
+      "data-incepere": "2025-06-01T19:31:29.456Z",
+      "data-finalizare": "2025-06-01T19:33:29.456Z",
+      "reducere": "50"
+    },
+    {
+      "categorie": "Rock",
+      "data-incepere": "2025-06-01T19:29:29.454Z",
+      "data-finalizare": "2025-06-01T19:31:29.454Z",
+      "reducere": "35"
+    },
+    {
+      "categorie": "R&B",
+      "data-incepere": "2025-06-01T19:28:00.611Z",
+      "data-finalizare": "2025-06-01T19:30:00.611Z",
+      "reducere": "15"
+    },
+    {
+      "categorie": "Alternative",
+      "data-incepere": "2025-06-01T19:26:00.610Z",
+      "data-finalizare": "2025-06-01T19:28:00.610Z",
+      "reducere": "10"
+    },
+    {
+      "categorie": "Rock",
+      "data-incepere": "2025-06-01T19:24:00.608Z",
+      "data-finalizare": "2025-06-01T19:26:00.608Z",
+      "reducere": "15"
+    },
+    {
+      "categorie": "R&B",
+      "data-incepere": "2025-06-01T19:22:00.608Z",
+      "data-finalizare": "2025-06-01T19:24:00.608Z",
+      "reducere": "10"
+    },
+    {
+      "categorie": "Hip Hop",
+      "data-incepere": "2025-06-01T19:20:00.602Z",
+      "data-finalizare": "2025-06-01T19:22:00.602Z",
+      "reducere": "50"
+    },
+    {
+      "categorie": "Rock",
+      "data-incepere": "2025-06-01T19:18:00.603Z",
+      "data-finalizare": "2025-06-01T19:20:00.603Z",
+      "reducere": "50"
+    },
+    {
+      "categorie": "Hip Hop",
+      "data-incepere": "2025-06-01T19:16:00.599Z",
+      "data-finalizare": "2025-06-01T19:18:00.599Z",
+      "reducere": "45"
+    },
+    {
+      "categorie": "R&B",
+      "data-incepere": "2025-06-01T19:14:50.332Z",
+      "data-finalizare": "2025-06-01T19:16:50.332Z",
+      "reducere": "25"
+    },
+    {
+      "categorie": "Rock",
+      "data-incepere": "2025-06-01T19:12:50.335Z",
+      "data-finalizare": "2025-06-01T19:14:50.335Z",
+      "reducere": "35"
+    },
+    {
+      "categorie": "Hip Hop",
+      "data-incepere": "2025-06-01T19:10:50.327Z",
+      "data-finalizare": "2025-06-01T19:12:50.327Z",
+      "reducere": "35"
+    },
+    {
+      "categorie": "Alternative",
+      "data-incepere": "2025-06-01T19:10:07.976Z",
+      "data-finalizare": "2025-06-01T19:12:07.976Z",
+      "reducere": "35"
+    },
+    {
+      "categorie": "R&B",
+      "data-incepere": "2025-06-01T19:08:07.974Z",
+      "data-finalizare": "2025-06-01T19:10:07.974Z",
+      "reducere": "5"
+    },
+    {
+      "categorie": "Alternative",
+      "data-incepere": "2025-06-01T19:06:07.973Z",
+      "data-finalizare": "2025-06-01T19:08:07.973Z",
+      "reducere": "15"
+    },
+    {
+      "categorie": "Rock",
+      "data-incepere": "2025-06-01T19:04:07.977Z",
+      "data-finalizare": "2025-06-01T19:06:07.977Z",
+      "reducere": "20"
+    },
+    {
+      "categorie": "Alternative",
+      "data-incepere": "2025-06-01T19:02:08.021Z",
+      "data-finalizare": "2025-06-01T19:04:08.021Z",
+      "reducere": "15"
+    }
+  ]
 }
